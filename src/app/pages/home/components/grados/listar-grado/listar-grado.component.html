@@ -1,0 +1,62 @@
+<!-- <div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">lista de grados</span>
+            <button id="posicion" class="btn btn-dark btn-lg" [routerLink]="['../crearGrado']">Agregar</button>
+            <h5 style="margin-top: 30px;" *ngIf="grados.length == 0">NO HAY DATOS PARA MOSTRAR</h5>
+            <table *ngIf="grados.length > 0" class="table mt-5 table-striped table-hover">
+                <thead>
+                    <tr>
+
+                        <th>nombre</th>
+                        <th>clasificacion</th>
+                        <th>accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let grado of grados">
+                        <td>{{grado.nombre}}</td>
+                        <td>{{grado.compartido}}</td>
+                        <td><i class="far fa-edit fa-lg text-info mr-2" [routerLink]="['../editGrado',grado.id]" style="margin-right: 4px;"></i>
+                            <i (click)="eliminarGrado(grado.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div> -->
+
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Lista de grados</div>
+    <div class="page__content shadow p-3 position-relative">
+        <!-- <div class="page__content-data position-absolute"> -->
+        <button id="posicion" class="btn btn-dark btn-lg mt-4" [routerLink]="['../crearGrado']">Agregar</button>
+        <h5 style="margin-top: 30px;" *ngIf="grados.length == 0">NO HAY DATOS PARA MOSTRAR</h5>
+        <table *ngIf="grados.length > 0" class="table mt-5 table-striped table-hover">
+            <thead>
+                <tr>
+
+                    <th>nombre</th>
+                    <th>clasificacion</th>
+                    <th>accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let grado of grados">
+                    <td>{{grado.nombre}}</td>
+                    <td>{{grado.compartido}}</td>
+                    <td><i class="far fa-edit fa-lg text-info mr-2" [routerLink]="['../editGrado',grado.id]" style="margin-right: 4px;"></i>
+                        <i (click)="eliminarGrado(grado.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+        <!-- </div> -->
+    </div>

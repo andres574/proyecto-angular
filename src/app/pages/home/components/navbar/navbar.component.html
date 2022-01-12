@@ -1,0 +1,50 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['pagina1']">LUMMEN CHAT BOT</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['pagina1']" routerLinkActive="active">inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['listaGrado']" routerLinkActive="active">Grados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['teacher']" routerLinkActive="active">profesores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['student']" routerLinkActive="active">estudiante</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['config']" routerLinkActive="active">configuraciones</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logout()" routerLink="/">Salir</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+<mat-toolbar>
+    <mat-toolbar-row class="justify-content-between">
+        <button mat-icon-button (click)="toggleSidebar()">
+         <mat-icon>menu</mat-icon>
+    </button>
+        <div class="row mr-2 ml-auto">
+            <ul class="row m-0 align-items-center">
+                <li>
+                    <button (click)="logout()" routerLink="/" mat-button class="user mt-2 d-flex align-items-center">
+                            <mat-icon>exit_to_app</mat-icon>Salir
+                     </button>
+
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

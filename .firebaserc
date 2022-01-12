@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "interno-lumen-analitica": {
+      "hosting": {
+        "base": [
+          "interno-lumen-analitica"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "interno-lumen-analitica"
+  }
+}

@@ -1,0 +1,35 @@
+<mat-nav-list>
+    <div class="logo py-4">
+        <img src="https://images.emojiterra.com/google/android-nougat/512px/1f4d6.png" alt="">
+    </div>
+    <mat-divider></mat-divider>
+    <h2 matSubheader class="mt-2">APPLICATIONS</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">
+        <mat-icon>home</mat-icon> Home
+    </a>
+    <div *ngIf="role == 'admin'; else noAdmin">
+        <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['listaGrado']" routerLinkActive="active">
+            <mat-icon>assignment_ind</mat-icon> Grados
+
+        </a>
+
+        <a mat-list-item [routerLink]="['teacher']" routerLinkActive="active">
+            <mat-icon>supervised_user_circle</mat-icon>
+            profesores </a>
+        <a mat-list-item [routerLink]="['student']" routerLinkActive="active">
+            <mat-icon>school</mat-icon> Estudiantes
+        </a>
+        <a mat-list-item [routerLink]="['config']" routerLinkActive="active">
+            <mat-icon>build</mat-icon> configuraciones </a>
+    </div>
+    <ng-template #noAdmin>
+        <a mat-list-item [routerLink]="['student']" routerLinkActive="active">
+            <mat-icon>school</mat-icon> Estudiantes
+        </a>
+        <a mat-list-item [routerLink]="['config']" routerLinkActive="active">
+            <mat-icon>build</mat-icon> configuraciones </a>
+    </ng-template>
+
+</mat-nav-list>
+<!-- *ngIf="role == 'estudiante' " -->

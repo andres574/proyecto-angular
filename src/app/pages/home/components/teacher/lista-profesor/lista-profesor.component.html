@@ -1,0 +1,38 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Lista de Profesores</div>
+    <div class="page__content shadow p-3 position-relative">
+        <!-- <div class="page__content-data position-absolute"> -->
+        <button id="posicion" class="btn btn-dark btn-lg mt-4" [routerLink]="['../teacherCrear']">Agregar</button>
+        <h5 style="margin-top: 30px;" *ngIf="profesores.length == 0">NO HAY DATOS PARA MOSTRAR</h5>
+        <table *ngIf="profesores.length > 0" class="table mt-5 table-striped table-hover">
+            <thead>
+                <tr>
+
+                    <th>nombre y apellido</th>
+                    <th>Documento</th>
+                    <th>Genero</th>
+                    <th>Correo</th>
+                    <th>telefono</th>
+                    <th>accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let profesor of profesores">
+                    <td>{{profesor.nombreApellido}}</td>
+                    <td>{{profesor.documento}}</td>
+                    <td>{{profesor.genero}}</td>
+                    <td>{{profesor.correo}}</td>
+                    <td>{{profesor.telefono}}</td>
+
+
+
+                    <td><i class="far fa-edit fa-lg text-info mr-2" [routerLink]="['../teacherEditar',profesor.id]" style="margin-right: 4px;"></i>
+                        <i (click)="eliminarProfesor(profesor.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+        <!-- </div> -->
+    </div>

@@ -1,0 +1,15 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Home</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data position-absolute">
+            <div *ngIf="role == 'admin'; else noadmin">
+                <h1>hola administrador</h1>
+
+            </div>
+            <ng-template #noadmin>
+                <h1>hola estudiante</h1>
+            </ng-template>
+
+        </div>
+    </div>
+</div>

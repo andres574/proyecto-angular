@@ -1,0 +1,71 @@
+<!-- <div class="container  pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>{{titulo}}
+                        <div class="spinner-border float" *ngIf="loading" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </h3>
+                    <div class="coloadver" *ngIf="sumitted && crearGrados.invalid">Todos los campos son obligatorios</div>
+                    <form class="mt-4" [formGroup]="crearGrados" (ngSubmit)="agregarEditarGrado()">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" placeholder="Nombre" formControlName="nombre">
+                            </div>
+
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg " placeholder="clasificacion" formControlName="compartido">
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <button type="text" class="btn btn-warning btn-lg mr-3" [routerLink]="[acceso]">volver</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Agregar</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">{{titulo}}</div>
+    <div class="page__content shadow p-3 position-relative">
+
+
+        <br>
+        <div class="coloadver" *ngIf="sumitted && crearGrados.invalid">Todos los campos son obligatorios</div>
+        <form class="mt-4" [formGroup]="crearGrados" (ngSubmit)="agregarEditarGrado()">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control form-control-lg" placeholder="Nombre" formControlName="nombre">
+                </div>
+
+                <!-- <div class="col">
+                    <input type="text" class="form-control form-control-lg " placeholder="clasificacion" formControlName="compartido">
+                </div> -->
+                <div class="col">
+                    <select formControlName="compartido" class="form-control form-control-lg ">
+                        <option value="" [selected]="true" [disabled]="true">Seleccione una opcion</option>                        
+                        <option value="Publico">publico</option>
+                        <option value="Privado">Privado</option>
+
+                    </select>
+                </div>
+
+
+
+            </div>
+            <div class="mt-3">
+                <button type="text" class="btn btn-warning btn-lg mr-3" [routerLink]="[acceso]">volver</button>
+                <button type="submit" class="btn btn-primary btn-lg">{{boton}}</button>
+
+            </div>
+        </form>
+
+    </div>
+</div>

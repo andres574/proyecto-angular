@@ -1,0 +1,48 @@
+<section>
+    <div class="imgBx">
+        <img src="https://images.pexels.com/photos/4431922/pexels-photo-4431922.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+    </div>
+    <div class="contentBx">
+        <div class="formBx">
+            <h2>Login</h2>
+            <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <div class="inputBx">
+                    <span>Correo</span>
+                    <input type="text" id="email" name="email" placeholder="Correo electrónico" class="form-control" formControlName='email'>
+                    <div class="alert alert-danger  animated fadeIn" *ngIf=" email.invalid && (email.dirty || email.touched) ">
+                        <div class="container-error-message" *ngIf="email.errors.required">
+                            El correo es obligatorio
+                        </div>
+                        <div class="container-error-message" *ngIf="email.invalid && email.errors.pattern">
+                            El correo no es válido
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inputBx">
+                    <span>Password</span>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control" formControlName='password' required minlength="6" />
+                    <div class="alert alert-danger animated fadeIn" *ngIf=" password.invalid && (password.dirty || password.touched) ">
+                        <div class="container-error-message" *ngIf="password.errors.required">
+                            La contraseña es obligatorio
+                        </div>
+                        <div class="container-error-message" *ngIf="password.errors.minlength">
+                            La contraseña al menos debe tener 6 carateres
+                        </div>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <input type="submit" [disabled]=" !loginForm.valid " value="Ingresar">
+
+                </div>
+                <div class="inputBx">
+                    <p>Don´t have an account?<a href="#" [routerLink]="['/auth/register']">Registrarse</a> </p>
+                </div>
+
+                <div class="inputBx">
+                    <p>Olvidaste tu contraseña? <a href="#" [routerLink]="['/auth/password']">Recuperar</a> </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

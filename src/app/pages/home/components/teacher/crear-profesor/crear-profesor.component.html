@@ -1,0 +1,44 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">{{titulo}}</div>
+    <div class="page__content shadow p-3 position-relative">
+
+
+        <br>
+        <div class="coloadver" *ngIf="sumitted && crearProfesor.invalid">Todos los campos son obligatorios</div>
+        <form class="mt-4" [formGroup]="crearProfesor" (ngSubmit)="agregarEditarProfesor()">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control form-control-lg" placeholder="Nombre y apellido" formControlName="nombreApellido">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control form-control-lg" placeholder="Documento de identidad" formControlName="documento">
+                </div>
+
+                <div class="col">
+                    <select formControlName="genero" class="form-control form-control-lg ">
+                        <option value="" [selected]="true" [disabled]="true">Seleccione una opcion</option>                        
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <input type="email" class="form-control form-control-lg" placeholder="Correo electronico" formControlName="correo">
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control form-control-lg" placeholder="Telefono" formControlName="telefono">
+                </div>
+            </div>
+            <div class="mt-3">
+                <button type="text" class="btn btn-warning btn-lg mr-3" [routerLink]="[acceso]">volver</button>
+                <button type="submit" class="btn btn-primary btn-lg mr-3">{{boton}}</button>
+
+            </div>
+        </form>
+
+    </div>
+</div>
